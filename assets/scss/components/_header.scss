@@ -1,0 +1,159 @@
+.sticky-top {
+	background-color: #fff;
+	position: sticky !important;
+	top: -1px;
+	z-index: 9999;
+}
+.header {
+	position: relative;
+	padding: 16px 0;
+	width: 100%;
+	@include respond($tabland) {
+		background-color: #fff;
+	}
+	@include respond($phone) {
+		padding-top: 66px;
+	}
+
+	&-wrapper {
+		@include flexbox(center, flex-start);
+	}
+
+	&-info {
+		a {
+			color: #364a5c;
+			display: inline-block;
+			font-family: $default;
+			font-style: normal;
+			font-weight: $regular;
+			font-size: 16px;
+			line-height: 16px;
+			text-decoration: none;
+			transition: $transition;
+
+			&:hover {
+				color: $theme-green;
+			}
+			&:not(.vb-btn) {
+				margin-right: 16px;
+			}
+		}
+	}
+}
+
+.logo {
+	max-width: 172px;
+	display: inline-block;
+}
+
+.nav-wrapper {
+	@include flexbox(center, flex-start);
+	flex: 1;
+	.header-info {
+		@include respond($tabland) {
+			margin-left: auto;
+		}
+		@include respond($phone) {
+			background-color: #f6fcfc;
+			padding: 10px;
+			position: absolute;
+			top: 0%;
+			left: 0%;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	#menu-toogler-btn {
+		width: 44px;
+		height: 44px;
+		background-color: $clrMenu;
+		border-radius: 4px;
+		margin-left: 16px;
+		text-decoration: none;
+		display: none;
+		i {
+			font-size: 30px;
+			color: #fff;
+			display: none;
+		}
+		&.menu-open {
+			svg {
+				display: none;
+			}
+			i {
+				display: block;
+				line-height: 44px;
+				text-align: center;
+			}
+		}
+		svg {
+			width: 44px;
+			margin-top: 10px;
+			path {
+				fill: #fff;
+			}
+		}
+		@include respond($tabland) {
+			display: inline-block;
+		}
+		@include respond($phone) {
+			margin-left: auto;
+		}
+	}
+}
+.nav {
+	margin-left: auto;
+	margin-right: 72px;
+	@include respond($tabland) {
+		display: none;
+		background: #fff;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		z-index: 999;
+		// box-shadow: 0 4px 16px rgba(#000, 0.1);
+		ul {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			padding-bottom: 16px !important;
+			a {
+				display: block;
+				padding: 16px !important;
+				text-align: center;
+				font-weight: 500;
+				&:hover {
+					background: rgba($clrMenu, 0.05);
+				}
+			}
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		display: inline-block;
+		a {
+			font-family: $default;
+			display: block;
+			font-weight: $regular;
+			font-size: 20px;
+			line-height: 16px;
+			text-decoration: none;
+			text-transform: capitalize;
+			color: #001833;
+			padding: 0 16px;
+			transition: $transition;
+
+			&:hover {
+				color: $theme-green;
+			}
+		}
+	}
+}

@@ -1,0 +1,175 @@
+.footer {
+	position: relative;
+
+	&-top {
+		background-color: #d6fdf5;
+		padding: 64px 0 192px;
+		@include respond($medium) {
+			padding-bottom: 150px;
+		}
+		@include respond($tabland) {
+			padding-bottom: 100px;
+		}
+		@include respond($tabport) {
+			padding-bottom: 80px;
+		}
+		@include respond($phone) {
+			padding-bottom: 64px;
+		}
+
+		.foo-logo {
+			max-width: 138px;
+			margin-bottom: 32px;
+		}
+	}
+	&-bottom {
+		background-color: #098d44;
+		padding: 12px 0;
+
+		a {
+			color: #fff;
+			display: inline-block;
+			font-size: 12px;
+			line-height: 16px;
+			text-decoration: none;
+			margin-right: 12px;
+		}
+		p {
+			margin-bottom: 0;
+			display: inline-block;
+			font-size: 12px;
+			line-height: 16px;
+			color: #fff;
+
+			svg {
+				margin-left: 16px;
+			}
+		}
+	}
+}
+
+.footer-widget {
+	position: relative;
+	display: block;
+
+	&-nav,
+	&-address {
+		@include respond($tabland) {
+			margin-top: 24px;
+		}
+		@include respond($tabport) {
+			max-width: 50%;
+			flex-basis: 50% !important;
+		}
+
+		@include respond($phone-md) {
+			// max-width: 100%;
+			max-width: 100%;
+			flex-basis: 100% !important;
+		}
+	}
+
+	&-title {
+		font-weight: $semibold;
+		font-size: 16px;
+		line-height: 24px;
+		color: #001833;
+		margin-bottom: 8px;
+	}
+
+	&-nav {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		li {
+			display: block;
+			width: 100%;
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+			a {
+				font-size: 16px;
+				line-height: 24px;
+				color: #364a5c;
+				text-decoration: none;
+			}
+		}
+	}
+
+	&-address {
+		address {
+			font-size: 16px;
+			line-height: 33px;
+			color: #364a5c;
+			margin-bottom: 16px;
+
+			a {
+				color: #364a5c;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.newsletter {
+	.field-group {
+		@include respond($phone-sm) {
+			flex-direction: column;
+		}
+	}
+	h3 {
+		font-size: 20px;
+		line-height: 24px;
+		color: #001833;
+		margin-bottom: 8px;
+	}
+	p {
+		font-size: 16px;
+		line-height: 24px;
+		color: #364a5c;
+		margin-bottom: 0;
+
+		&:last-of-type {
+			margin-bottom: 24px;
+		}
+
+		a {
+			color: $theme-green;
+			text-decoration: none;
+			display: inline-block;
+		}
+	}
+	button[type='submit'] {
+		display: block;
+		width: 100%;
+	}
+}
+
+.nav-flex {
+	@include flexbox;
+
+	.footer-widget {
+		flex: 1;
+	}
+}
+
+.social a {
+	color: #001833;
+	padding: 0 10px;
+	transition: 300ms all;
+	&:hover {
+		display: inline-block;
+		color: #098d44;
+		transform: scale(1.2);
+		i,
+		i.fa-brands {
+			color: #098d44;
+		}
+	}
+
+	&:first-of-type {
+		padding-left: 0;
+	}
+}

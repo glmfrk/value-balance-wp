@@ -1,0 +1,21 @@
+@mixin pseudo($t: 0, $r: 0, $b: 0, $l: 0) {
+	content: "";
+	position: absolute;
+	top: $t;
+	left: $l;
+	right: $r;
+	bottom: $b;
+}
+
+@mixin bg-props($s: cover, $p: center top, $r: no-repeat) {
+	background-size: $s;
+	background-position: $p;
+	background-repeat: $r;
+}
+
+@mixin flexbox($a: inherit, $jc: space-between) {
+	align-items: $a;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: $jc;
+}
