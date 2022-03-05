@@ -62,6 +62,27 @@ function value_balance_customize_register( $wp_customize ) {
 		'type' 	 	 => 'text'
 	));
 
+	$wp_customize -> add_setting ('call_to_action', array(
+		'default' => 'contact',
+		'transport' => 'postMessage'
+	));
+
+	$wp_customize -> add_control ('call_to_action', array(
+		'label'		 => __('Add Call To Action', 'value-balance' ),
+		'section'	 => 'general',
+		'type' 	 	 => 'text'
+	));
+	$wp_customize -> add_setting ('call_to_action_visibility', array(
+		'default' => 'checkbox',
+		'transport' => 'postMessage'
+	));
+
+	$wp_customize -> add_control ('call_to_action_visibility', array(
+		'label'		 => __('Call To Action Visibility', 'value-balance' ),
+		'section'	 => 'general',
+		'type' 	 	 => 'checkbox'
+	));
+
 }
 add_action( 'customize_register', 'value_balance_customize_register' );
 

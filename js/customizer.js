@@ -52,4 +52,16 @@
             $(".header-info .phone").text(to);
         });
     });
+
+    wp.customize("call_to_action", function (value) {
+        value.bind(function (to) {
+            $(".header-info .contact-btn").text(to);
+        });
+    });
+
+    wp.customize("call_to_action_visibility", function (value) {
+        value.bind(function (to) {
+            true === to ? $(".header-info").show() : $(".header-info").hide();
+        });
+    });
 })(jQuery);

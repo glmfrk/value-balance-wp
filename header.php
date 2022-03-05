@@ -60,10 +60,12 @@ $custom_logo_id = get_theme_mod( 'logo_option' , get_template_directory_uri().'/
 								
 								?>
 							</nav>
-							<div class="header-info">
-								<a href="tel:1855728-2566" class="phone"><?php echo get_theme_mod( 'phone_number', '1 (855) 728-2566' ) ?></a>
-								<a href="#" class="vb-btn vb-btn-filled rounded contact-btn">Work With Us</a>
-							</div>
+							<?php if (true === get_theme_mod('call_to_action_visibility')) : ?>
+								<div class="header-info">
+									<a href="tel:1855728-2566" class="phone"><?php echo get_theme_mod( 'phone_number', '1 (855) 728-2566' ) ?></a>
+									<a href="#" class="vb-btn vb-btn-filled rounded contact-btn"><?php echo get_theme_mod( 'call_to_action') ?></a>
+								</div>
+							<?php endif ?>
 							<a href="javascript:void(0);" id="menu-toogler-btn" class="">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path
